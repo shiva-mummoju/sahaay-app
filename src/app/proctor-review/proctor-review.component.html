@@ -1,0 +1,25 @@
+<!-- <a routerLink="/main">Back</a><br><br> -->
+<app-header></app-header>
+
+  
+<div class="data">
+  <div class="row  head"   >
+    <div class="col col-xs-4">NAME</div>
+    <div class="col col-xs-4">CLASS</div>
+    <div class="col col-xs-4">SECTION</div>
+    <!-- <div class="col col-xs-3">ACTION</div> -->
+    </div>
+    <div *ngFor="let x of  firebase.pendinglist | async">
+        <div *ngIf="x.payload.val().proctor == auth.currentemail && x.payload.val().status == 'under proctor review'" (click)="giveproctorremark(x.key)">  
+          <div class="row  myrow ">  
+          <div class="col col-xs-4">{{(x.payload.val().name.length>10)? (x.payload.val().name | slice:0:10)+'..':(x.payload.val().name) }}</div>
+            <div class="col col-xs-4">{{ (x.payload.val().class.length>10)? (x.payload.val().class | slice:0:10)+'..':(x.payload.val().class) }}</div>
+            <div class="col col-xs-4">{{ (x.payload.val().section.length>10)? (x.payload.val().section | slice:0:10)+'..':(x.payload.val().section)}}</div>
+            <!-- <div class="col col-xs-3"><i class="fa fa-edit" ></i></div> -->
+          </div>
+        </div>
+     </div>  
+     </div>
+
+
+  

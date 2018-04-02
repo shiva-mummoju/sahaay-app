@@ -1,0 +1,11 @@
+<a routerLink="/main">Back</a><br><br>
+
+<p>Current email: </p>
+<p>{{auth.currentemail}}</p>
+<p>Status of application: </p>
+
+<div *ngFor="let x of firebase.pendinglist | async"  >
+<div  *ngIf = "auth.currentuserid == x.payload.val().uid"> 
+        {{ x.payload.val().viewstatus  }}
+</div>
+</div>

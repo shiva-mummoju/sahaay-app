@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-color: #7B1FA2;
+}
+
+button{
+    cursor: pointer;
+}
+
+
+
+body::-webkit-scrollbar{
+    width: 1px;
+}
+
+
+
+.data{
+    text-align: center;
+    color: white;
+    height: 30px;
+    word-break: break-all;
+}
+
+.myrow{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border-bottom: 2px solid grey;
+    /* border-right: 2px solid grey; */
+}
+
+.myrow:hover{
+    cursor: pointer;
+    background-color: gainsboro;
+}
+
+
+.col{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    /* word-wrap: break-word; */
+    word-break: break-all;
+}
+
+
+.head{
+    background-color: teal;
+    color: white;
+
+}
+

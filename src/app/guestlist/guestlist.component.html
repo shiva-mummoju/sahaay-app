@@ -1,0 +1,42 @@
+<a routerLink="/main">Back</a><br><br>
+
+<p>Enter guest name</p>
+<div class="form-group">
+    <label >Guest name: </label>
+  <input class="form-control"  type="text"  [(ngModel)]="guestName" placeholder="enter the name: "  > 
+  
+  
+  </div>
+<div class="form-group">
+  <label >Guest email: </label>
+<input class="form-control"  type="text"  [(ngModel)]="guestInput" placeholder="enter the gmail id of the guest "  > 
+
+
+</div>
+
+<div  class="form-group">
+    <button class="btn btn-primary form-control"  (click)='addnewguest()' >Submit</button>
+</div>
+
+
+
+<br><br>
+
+<p>List of Guests</p>
+
+
+
+
+<table class="table table-sm table-hover">
+  <tr *ngFor="let x of  firebase.guestlist | async">
+      <td>{{x.payload.val().name}}</td>
+      <td>
+        <a class="btn" (click)="onDelete(x.key)">
+          <i class="fa fa-trash-o" ></i>
+        </a>
+      </td>
+  </tr>
+
+</table>
+
+

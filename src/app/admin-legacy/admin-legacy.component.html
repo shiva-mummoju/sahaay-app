@@ -1,0 +1,25 @@
+<a routerLink="/main">Back</a><br><br>
+
+
+
+
+
+<table class="table table-sm table-hover">
+    <tr>
+      <td>Name</td>
+      <td>class</td>
+      <td>section</td>
+    </tr>
+      <tr *ngFor="let x of  firebase.legacylist | async">
+        <div >  
+        <td>{{x.payload.val().name}}</td>
+        <td>{{x.payload.val().class}}</td>
+        <td>{{x.payload.val().section}}</td>
+          <td>
+            
+              <i class="fa fa-edit" (click)="loadlegacyview(x.key)"></i>
+            
+          </td>
+        </div>
+      </tr>
+    

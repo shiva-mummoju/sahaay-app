@@ -1,0 +1,48 @@
+<app-header></app-header>
+
+
+
+<!-- 
+<table class="table table-sm table-hover">
+  <tr>
+    <td>Name</td>
+    <td>class</td>
+    <td>section</td>
+    <td>Status</td>
+  </tr>
+    <tr *ngFor="let x of  firebase.pendinglist | async">
+      <div *ngIf="x.payload.val().status == 'rejected'">  
+      <td>{{x.payload.val().name}}</td>
+      <td>{{x.payload.val().class}}</td>
+      <td>{{x.payload.val().section}}</td>
+      <td>{{x.payload.val().status}}</td>
+        <td>
+          <a *ngIf="auth.currentuserrank == 'admin'" (click)="rejectthisapplication(x.key)" >
+            <i class="fa fa-trash-o" ></i>
+        </a>
+        </td>
+      </div>
+    </tr>
+   -->
+
+   
+  
+<div class="data">
+    <div class="row  head"   >
+      <div class="col col-xs-4">NAME</div>
+      <div class="col col-xs-4">ROLLNUMBER</div>
+      <div class="col col-xs-4">STATUS</div>
+      <!-- <div class="col col-xs-3">ACTION</div> -->
+      </div>
+      <div *ngFor="let x of  firebase.pendinglist | async">
+          <div *ngIf=" x.payload.val().status == 'rejected'" >  
+            <div class="row  myrow ">  
+            <div class="col col-xs-4">{{(x.payload.val().name.length>20)? (x.payload.val().name | slice:0:20)+'..':(x.payload.val().name) }}</div>
+              <div class="col col-xs-4">{{ (x.payload.val().rollNumber.length>20)? (x.payload.val().rollNumber | slice:0:20)+'..':(x.payload.val().rollNumber) }}</div>
+              <div class="col col-xs-4">{{ (x.payload.val().section.length>20)? (x.payload.val().section | slice:0:20)+'..':(x.payload.val().section)}}</div>
+              <!-- <div class="col col-xs-3"><i class="fa fa-edit" ></i></div> -->
+            </div>
+          </div>
+       </div>  
+       </div>
+  

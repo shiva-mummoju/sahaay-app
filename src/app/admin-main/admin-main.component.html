@@ -1,0 +1,46 @@
+
+<a routerLink="/main">Back</a><br><br>
+<p>Enter admin name</p>
+<div class="form-group">
+    <label >Admin name: </label>
+  <input class="form-control"  type="text"  [(ngModel)]="adminName" placeholder="enter the name: "  > 
+  
+  
+  </div>
+<div class="form-group">
+  <label >Admin email: </label>
+<input class="form-control"  type="text"  [(ngModel)]="adminInput" placeholder="enter the gmail id of the proctor to add "  > 
+
+
+</div>
+
+<div  class="form-group">
+    <button class="btn btn-primary form-control"  (click)='addnewadmin()' >Submit</button>
+</div>
+
+
+
+
+
+
+<br>
+
+
+<p>List of Admin</p>
+
+
+
+
+<table class="table table-sm table-hover">
+  <tr *ngFor="let x of  firebase.adminList | async">
+      <td>{{x.payload.val().name}}</td>
+      <td>
+        <a class="btn" (click)="onDelete(x.key)">
+          <i class="fa fa-trash-o" ></i>
+        </a>
+      </td>
+  </tr>
+
+</table>
+
+

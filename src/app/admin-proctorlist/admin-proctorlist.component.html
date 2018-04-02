@@ -1,0 +1,43 @@
+<!-- <a routerLink="/main">Back</a><br><br> -->
+<app-header></app-header>
+
+<p>Enter proctor name</p>
+<div class="form-group">
+    <label >Proctor name: </label>
+  <input class="form-control"  type="text"  [(ngModel)]="proctorName" placeholder="enter the name: "  > 
+  
+  
+  </div>
+<div class="form-group">
+  <label >Proctor email: </label>
+<input class="form-control"  type="text"  [(ngModel)]="proctorInput" placeholder="enter the gmail id of the proctor to add "  > 
+
+
+</div>
+
+<div  class="form-group">
+    <button class="btn btn-primary form-control"  (click)='addnewproctor()' >Submit</button>
+</div>
+
+
+
+<br><br>
+
+<p>List of proctors</p>
+
+
+
+
+<table class="table table-sm table-hover">
+  <tr *ngFor="let x of  firebase.proctorList | async">
+      <td>{{x.payload.val().name}}</td>
+      <td>
+        <a class="btn" (click)="onDelete(x.key)">
+          <i class="fa fa-trash-o" ></i>
+        </a>
+      </td>
+  </tr>
+
+</table>
+
+

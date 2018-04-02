@@ -1,0 +1,25 @@
+<a routerLink="/main">Back</a><br><br>
+
+
+
+
+
+<table class="table table-sm table-hover">
+  <tr>
+    <td>Name</td>
+    <td>class</td>
+    <td>section</td>
+  </tr>
+    <tr *ngFor="let x of  firebase.pendinglist | async">
+      <div *ngIf="x.payload.val().status == 'under hod review'" (click)="giveadminremark(x.key)">  
+      <td>{{x.payload.val().name | slice:0:6}}</td>
+      <td>{{x.payload.val().class | slice:0:6}}</td>
+      <td>{{x.payload.val().section | slice:0:6}}</td>
+        <td>
+          
+            <i class="fa fa-edit" ></i>
+          
+        </td>
+      </div>
+    </tr>
+  

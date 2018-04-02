@@ -1,0 +1,38 @@
+
+.text{
+height: 100px;
+background-color: #0D47A1;
+width: 100%;
+height: 150px;
+color: white;
+font-size: 10em;
+margin-right: auto;
+margin-left: auto;
+margin-top: 10px;
+}
+
+.card {
+    margin-top: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+img {
+    border-radius: 5px 5px 0 0;
+}
+
+.container {
+    /* margin-top: 20px; */
+    padding: 2px 16px;
+    text-align: center;
+}
+.container::-webkit-scrollbar{
+    width: 1px;
+}

@@ -1,0 +1,137 @@
+
+<app-header></app-header>
+<!-- <div style="height: 100px"  ></div> -->
+<div class="container">
+<div class="row">
+    
+    <div class="col col-lg-4 col-md-12 col-sm-12 col-xs-12  " (click)="gotoplace('edit')" *ngIf="auth.currentuserrank == 'student'">
+        <div class="card">
+                <i   class="fa fa-edit fa-5x " ></i>
+                <div class="container">
+                  <h4><b>Edit Application</b></h4> 
+                </div>
+              </div>
+    </div>
+    <div class="col col-lg-4 col-md-12 col-sm-12 col-xs-12  " (click)="gotoplace('status')" *ngIf="auth.currentuserrank == 'student'">
+            <div class="card">
+                    <i   class="fa fa-tasks fa-5x " ></i>
+                    <div class="container">
+                      <h4><b>Status Of Application</b></h4> 
+                    </div>
+                  </div>
+        </div>
+    <div class="col col-lg-4 col-md-12 col-sm-12 col-xs-12  " (click)="gotoplace('view')" *ngIf="auth.currentuserrank == 'student'">
+            <div class="card">
+                    <i   class="fa fa-list fa-5x " ></i>
+                    <div class="container">
+                        <h4><b>View Application</b></h4> 
+                    </div>
+                    </div>
+        </div>
+    <div class="col col-lg-4 col-md-12 col-sm-12 col-xs-12  " (click)="gotoplace('proctorreview')" *ngIf="auth.currentuserrank == 'proctor'">
+            <div class="card">
+                    <i   class="fa fa-spinner fa-5x " ></i>
+                    <div class="container">
+                        <h4><b>Pending Applications</b></h4> 
+                    </div>
+                    </div>
+        </div>
+   
+    <div class="col col-lg-4 col-md-12 col-sm-12 col-xs-12  " (click)="gotoplace('semesterall')" *ngIf="auth.currentuserrank == 'admin' || auth.currentuserrank == 'proctor'  || auth.currentuserrank == 'guest'">
+            <div class="card">
+                    <i   class="fa fa-list-ul fa-5x " ></i>
+                    <div class="container">
+                        <h4><b>All Applications</b></h4> 
+                    </div>
+                    </div>
+        </div>
+    <div class="col col-lg-4 col-md-12 col-sm-12 col-xs-12  " (click)="gotoplace('allaccepted')" *ngIf="auth.currentuserrank == 'admin' || auth.currentuserrank == 'proctor'  || auth.currentuserrank == 'guest'">
+            <div class="card">
+                    <i   class="fa fa-check-square fa-5x " ></i>
+                    <div class="container">
+                        <h4><b>Accepted Applications</b></h4> 
+                    </div>
+                    </div>
+    </div>
+    <div class="col col-lg-4 col-md-12 col-sm-12 col-xs-12  " (click)="gotoplace('semesterrejected')" *ngIf="auth.currentuserrank == 'admin' || auth.currentuserrank == 'proctor'  || auth.currentuserrank == 'guest'">
+            <div class="card">
+                    <i   class="fa fa-times-circle fa-5x " ></i>
+                    <div class="container">
+                        <h4><b>Rejected Applications</b></h4> 
+                    </div>
+                    </div>
+        </div>
+    <div class="col col-lg-4 col-md-12 col-sm-12 col-xs-12  " (click)="gotoplace('history')" *ngIf="auth.currentuserrank == 'admin'   || auth.currentuserrank == 'guest'">
+            <div class="card">
+                    <i   class="fa fa-history fa-5x " ></i>
+                    <div class="container">
+                        <h4><b>View History</b></h4> 
+                    </div>
+                    </div>
+        </div>        
+
+   
+<div class="col col-lg-4 col-md-12 col-sm-12 col-xs-12  " (click)="gotoplace('adminlist')" *ngIf="auth.currentuserrank == 'admin'">
+        <div class="card">
+                <i   class="fa fa-id-card fa-5x " ></i>
+                <div class="container">
+                    <h4><b>Add Admin</b></h4> 
+                </div>
+                </div>
+    </div>  
+    <div class="col col-lg-4 col-md-12 col-sm-12 col-xs-12  " (click)="gotoplace('proctorlist')" *ngIf="auth.currentuserrank == 'admin'">
+            <div class="card">
+                    <i   class="fa fa-address-card fa-5x " ></i>
+                    <div class="container">
+                        <h4><b>Add Proctor</b></h4> 
+                    </div>
+                    </div>
+        </div>  
+<div class="col col-lg-4 col-md-12 col-sm-12 col-xs-12  " (click)="gotoplace('guestlist')" *ngIf="auth.currentuserrank == 'admin'">
+        <div class="card">
+                <i   class="fa fa-user fa-5x " ></i>
+                <div class="container">
+                    <h4><b>Add Proctor</b></h4> 
+                </div>
+                </div>
+    </div>  
+    <div class="col col-lg-4 col-md-12 col-sm-12 col-xs-12  " (click)="gotoplace('adminreview')" *ngIf="auth.currentuserrank == 'admin'">
+            <div class="card">
+                    <i   class="fa fa-spinner fa-5x " ></i>
+                    <div class="container">
+                        <h4><b>Pending Review</b></h4> 
+                    </div>
+                    </div>
+        </div>  
+       
+
+        <div class="col col-lg-4 col-md-12 col-sm-12 col-xs-12  " *ngIf="auth.currentuserrank == 'admin'">
+                <div class="card">
+                        <i   class="fa fa-trash fa-5x " ></i>
+                        <div class="container">
+                            <h4><b>Clear Semester</b></h4> 
+                        </div>
+                        </div>
+            </div>  
+       
+
+        </div>
+
+<!-- </div> -->
+
+
+
+
+
+
+
+
+<!-- <button (click)="gotoadminlist()"  *ngIf="auth.currentuserrank == 'proctor'">view proctor accepted</button><br><br> -->
+<!-- <button (click)="gotoadminlist()"  *ngIf="auth.currentuserrank =='proctor'">View proctor rejected</button><br><br> -->
+
+
+
+
+
+
+<!-- <button (click)="gotoadminlist()" *ngIf="auth.currentuserrank == 'admin'">Start Stop</button><br><br> -->
