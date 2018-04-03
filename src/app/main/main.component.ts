@@ -38,7 +38,7 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     if(this.auth.currentuserrank == 'student'){
-      this.firebase.loadthisapplicationintoselected(this.auth.currentuserid,'skip');
+      this.firebase.loadthisapplicationintoselected('applications',   this.auth.currentuserid,'skip');
     }
    
 

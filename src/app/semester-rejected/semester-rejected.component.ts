@@ -15,7 +15,7 @@ export class SemesterRejectedComponent implements OnInit {
   }
 
   view(key){
-    this.firebase.loadthisapplicationintoselected(key,'view');
+    this.firebase.loadthisapplicationintoselected('applications',key,'view');
   }
 
 }

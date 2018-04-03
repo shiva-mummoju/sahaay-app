@@ -108,7 +108,7 @@ statusofcurrentapplication:string = 'Not Submitted';
   insertStudentApplication(){
     this.firebase.list('legacy/' + this.auth.currentuserid).update('/',{
       
-        uid:this.auth.currentuserid,
+      uid:this.auth.currentuserid,
       name:this.selectedApplication.name,
       email:this.auth.currentemail,
       rollNumber:this.selectedApplication.rollNumber,
@@ -143,6 +143,7 @@ statusofcurrentapplication:string = 'Not Submitted';
 
 
     this.firebase.list('applications/' + this.auth.currentuserid).update('/',{
+      
       uid:this.auth.currentuserid,
       name:this.selectedApplication.name,
       email:this.auth.currentemail,
@@ -198,8 +199,8 @@ statusofcurrentapplication:string = 'Not Submitted';
   }
 
 
-  loadthisapplicationintoselected(key:string,destination:string){
-    this.http.get('https://sahay-vasavi.firebaseio.com/applications/' + key + '.json')
+  loadthisapplicationintoselected(  source:string,  key:string,destination:string){
+    this.http.get('https://sahay-vasavi.firebaseio.com/' + source + '/' + key + '.json')
     .subscribe( (response) =>{
       console.log(response.json());
       var x = response.json();
@@ -248,7 +249,7 @@ statusofcurrentapplication:string = 'Not Submitted';
 
   update(viewstatus:string, codestatus:string){
     this.firebase.list('legacy/' + this.selectedApplication.uid).update('/',{
-        uid:this.selectedApplication.uid,
+      uid:this.selectedApplication.uid,
       name:this.selectedApplication.name,
       email:this.selectedApplication.email,
       rollNumber:this.selectedApplication.rollNumber,

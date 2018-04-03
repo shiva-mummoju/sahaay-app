@@ -18,7 +18,7 @@ export class AdminReviewComponent implements OnInit {
 
 
   giveadminremark(key){
-    this.firebase.loadthisapplicationintoselected(key,'adminremark');
+    this.firebase.loadthisapplicationintoselected( 'applications',key,'adminremark');
     // this.router.navigate(['adminremark']);
   }
 

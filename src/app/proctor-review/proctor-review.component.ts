@@ -21,7 +21,7 @@ export class ProctorReviewComponent implements OnInit {
 
   
   giveproctorremark(key){
-    this.firebase.loadthisapplicationintoselected(key,'proctorremark');
+    this.firebase.loadthisapplicationintoselected('applications',key,'proctorremark');
     this.router.navigate(['proctorremark']);
 
   }  
