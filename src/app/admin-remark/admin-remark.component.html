@@ -1,4 +1,4 @@
-<a routerLink="/adminreview">Back</a><br><br>
+<!-- <a routerLink="/adminreview">Back</a><br><br>
 
 <h1>Application</h1><br><br>
 
@@ -26,13 +26,140 @@
 <label >Utilize 2:</label>{{firebase.selectedApplication.utilize2}}<br>
 <label >Future plans 1: </label>{{firebase.selectedApplication.future1}}<br>
 <label >Future plans 2: </label>{{firebase.selectedApplication.future2}}<br>
-<label >Semester: </label>{{firebase.selectedApplication.semester}}<br>
+<label >Semester: </label>{{firebase.selectedApplication.semester}}<br> -->
 
-<br>
-<h2>Proctor Remark: </h2> {{firebase.selectedApplication.proctorremark}} 
+
+<app-header></app-header>
+
+
+
+
+
+<div class="data">
+        <div class="row head">
+        <div class="col col-xs-6">FORM</div>
+        <div class="col col-xs-6">VALUE</div>
+        </div>
+                  <div class="row  myrow ">  
+                        <div class="col col-xs-6">Name</div>
+                        <div class="col col-xs-6">{{firebase.selectedApplication.name  }}</div>
+                  </div>
+                  <div class="row  myrow ">  
+                        <div class="col col-xs-6">Number</div>
+                        <div class="col col-xs-6">{{firebase.selectedApplication.rollNumber  }}</div>
+                  </div>
+                  <div class="row  myrow ">  
+                        <div class="col col-xs-6">Class</div>
+                        <div class="col col-xs-6"> {{firebase.selectedApplication.class  }}  </div>
+                  </div>
+                  <div class="row  myrow ">  
+                        <div class="col col-xs-6">Section</div>
+                        <div class="col col-xs-6">{{firebase.selectedApplication.section  }}</div>
+                  </div>
+                  <div class="row  myrow ">  
+                      <div class="col col-xs-6">Status</div>
+                      <div class="col col-xs-6">{{firebase.selectedApplication.status  }}</div>
+                </div>
+                  <div class="row  myrow ">  
+                        <div class="col col-xs-6">Proctor</div>
+                        <div class="col col-xs-6">{{firebase.selectedApplication.proctor  }}</div>
+                  </div>
+                  <div class="row  myrow ">  
+                        <div class="col col-xs-6">Father</div>
+                        <div class="col col-xs-6">{{firebase.selectedApplication.father  }}</div>
+                  </div>
+                  <div class="row  myrow ">  
+                        <div class="col col-xs-6">Father Occupation</div>
+                        <div class="col col-xs-6">{{firebase.selectedApplication.fatherOccupation  }}</div>
+                  </div>
+                  <div class="row  myrow ">  
+                        <div class="col col-xs-6">Family Annual Income</div>
+                        <div class="col col-xs-6">{{firebase.selectedApplication.familyAnnualIncome  }}</div>
+                  </div>
+                  <div class="row  myrow ">  
+                        <div class="col col-xs-6">Fee Reiumbursment</div>
+                        <div class="col col-xs-6">{{firebase.selectedApplication.recieveFeeReimburs  }}</div>
+                  </div>
+                  <div class="row  myrow ">  
+                        <div class="col col-xs-6">Scholarship</div>
+                        <div class="col col-xs-6">{{firebase.selectedApplication.scholarship  }}</div>
+                  </div>
+                  <div class="row  myrow ">  
+                        <div class="col col-xs-6">Scholarship name</div>
+                        <div class="col col-xs-6">{{firebase.selectedApplication.scholarshipname  }}</div>
+                  </div>
+                  <div class="row  myrow ">  
+                        <div class="col col-xs-6">Attendance</div>
+                        <div class="col col-xs-6">{{firebase.selectedApplication.attendance  }}</div>
+                  </div>
+                  <div class="row  myrow ">  
+                        <div class="col col-xs-6">Backlogs</div>
+                        <div class="col col-xs-6">{{firebase.selectedApplication.backlogs  }}</div>
+                  </div>
+                  <div class="row  myrow ">  
+                        <div class="col col-xs-6">Aggregate</div>
+                        <div class="col col-xs-6">{{firebase.selectedApplication.aggregate  }}</div>
+                  </div>
+                  <div class="row  myrow ">  
+                        <div class="col col-xs-6">Eamcet Rank</div>
+                        <div class="col col-xs-6">{{firebase.selectedApplication.eamcetrank  }}</div>
+                  </div>
+                  <div class="row  myrow ">  
+                        <div class="col col-xs-6">Intermediate Marks</div>
+                        <div class="col col-xs-6">{{firebase.selectedApplication.interrank  }}</div>
+                  </div>
+                  <div class="row  myrow ">  
+                        <div class="col col-xs-6">Tenth Marks </div>
+                        <div class="col col-xs-6">{{firebase.selectedApplication.tenth  }}</div>
+                  </div>
+                  <div class="row  myrow ">  
+                        <div class="col col-xs-6">Points for deserving 1</div>
+                        <div class="col col-xs-6">{{firebase.selectedApplication.deserving1  }}</div>
+                  </div>
+                  <div class="row  myrow ">  
+                        <div class="col col-xs-6">Points deserving 2</div>
+                        <div class="col col-xs-6">{{firebase.selectedApplication.deserving2  }}</div>
+                  </div>
+                  <div class="row  myrow ">  
+                        <div class="col col-xs-6">Points deserving 3</div>
+                        <div class="col col-xs-6">{{firebase.selectedApplication.deserving3  }}</div>
+                  </div>
+                  <div class="row  myrow ">  
+                        <div class="col col-xs-6">utilize 1</div>
+                        <div class="col col-xs-6">{{firebase.selectedApplication.utilize1  }}</div>
+                  </div>
+                  <div class="row  myrow ">  
+                        <div class="col col-xs-6">utilize2</div>
+                        <div class="col col-xs-6">{{firebase.selectedApplication.utilize2  }}</div>
+                  </div>
+                  <div class="row  myrow ">  
+                        <div class="col col-xs-6">Future Plans 1</div>
+                        <div class="col col-xs-6">{{firebase.selectedApplication.future1  }}</div>
+                  </div>
+                  <div class="row  myrow ">  
+                        <div class="col col-xs-6">Future Plans 2</div>
+                        <div class="col col-xs-6">{{firebase.selectedApplication.future2  }}</div>
+                  </div>
+                  <div class="row  myrow ">  
+                        <div class="col col-xs-6">Semester</div>
+                        <div class="col col-xs-6">{{firebase.selectedApplication.semester  }}</div>
+                  </div>
+    
+    
+
+<br><br>
+<!-- <h2>Proctor Remark: </h2> {{firebase.selectedApplication.proctorremark}}  -->
+<div class="row  myrow ">  
+        <div class="col col-xs-6">Proctor Remark</div>
+        <div class="col col-xs-6">{{firebase.selectedApplication.proctorremark  }}</div>
+  </div>
+
 <br><br>
 <h2>Enter final remark</h2>
 <input type="text" name="mainremark" [(ngModel)]="firebase.selectedApplication.mainremark"  >
 <br><br>
 <button class="btn btn-success" (click)="acceptapplication()" > Accept this application </button>
 <button class="btn btn-danger" (click)="rejectapplication()" > Reject This Application </button>
+
+
+</div>

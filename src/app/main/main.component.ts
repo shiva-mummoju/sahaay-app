@@ -115,7 +115,7 @@ export class MainComponent implements OnInit {
   }
 
 
-  delete(){
+  clear(){
     if(confirm("Are you sure you want to delete all applications for this semester?"))
     this.firebase.deleteallapplicationsthissemester();
   }

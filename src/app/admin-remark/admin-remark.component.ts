@@ -23,10 +23,13 @@ export class AdminRemarkComponent implements OnInit {
   }
 
   rejectapplication(){
-    this.toastr.error("Rejected Application");;
-    this.firebase.selectedApplication.status = 'rejected'
-    this.firebase.update('Your application has been rejected by HOD','rejected');;
-    this.router.navigate(['adminreview']);
+    if(confirm("Are you sure you want to reject this application?"))
+{
+  this.toastr.error("Rejected Application");;
+  this.firebase.selectedApplication.status = 'rejected'
+  this.firebase.update('Your application has been rejected by HOD','rejected');;
+  this.router.navigate(['adminreview']);
+}    
   }
 
 

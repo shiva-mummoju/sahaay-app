@@ -34,6 +34,7 @@ export class GuestlistComponent implements OnInit {
 
   onDelete(key:string){
     this.firebase.deleteguest(key);
+    this.toastr.info("Removed from the guest list")
   }
 
 }

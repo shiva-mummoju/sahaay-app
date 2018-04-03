@@ -19,5 +19,9 @@ export class SemesterAcceptedComponent implements OnInit {
     console.log('code for rejecting this application');
   }
 
+  view(key){
+    this.firebase.loadthisapplicationintoselected(key,'view');
+  }
+
 
 }

@@ -23,6 +23,8 @@ export class AdminMainComponent implements OnInit {
 
 
   addnewadmin(){
+    
+    
     this.firebase.insertadmin(this.adminName,this.adminInput);
     this.toastr.success(this.adminName + ' has been added as admin','Success');
     this.adminInput = '';
@@ -30,7 +32,11 @@ export class AdminMainComponent implements OnInit {
   }
 
   onDelete(key:string){
-    this.firebase.deleteadmin(key);
+    if(confirm('Are you sure you want to remove as admin?')){
+      this.firebase.deleteadmin(key);
+    this.toastr.info('Removed from admin list')
+    }
+    
   }
 
 

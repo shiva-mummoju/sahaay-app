@@ -17,8 +17,8 @@ export class AdminLegacyComponent implements OnInit {
 
   }
 
-  loadlegacyview(key){
-    this.firebase.loadthisapplicationintoselected(key,'legacyview');
+  view(key){
+    this.firebase.loadthisapplicationintoselected(key,'view');
   }
 
 }

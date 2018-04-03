@@ -32,15 +32,15 @@
       <div class="col col-xs-4">STATUS</div>
       </div>
       <div *ngFor="let x of  firebase.pendinglist | async">
-          <!-- <div *ngIf="x.payload.val().proctor == auth.currentemail && x.payload.val().status == 'under proctor review'" (click)="giveproctorremark(x.key)">   -->
-            <div class="row  myrow ">  
+          <div  (click)="view(x.key)">  
+            <div class="row  myrow "    >  
             <div class="col col-xs-4">{{(x.payload.val().name.length>20)? (x.payload.val().name | slice:0:20)+'..':(x.payload.val().name) }}</div>
               <div class="col col-xs-4">{{ (x.payload.val().class.rollNumber>20)? (x.payload.val().rollNumber | slice:0:20)+'..':(x.payload.val().rollNumber) }}</div>
               <!-- <div class="col col-xs-4">{{ (x.payload.val().section.length>20)? (x.payload.val().section | slice:0:20)+'..':(x.payload.val().section)}}</div> -->
               <div class="col col-xs-4">{{ (x.payload.val().status.length>20)? (x.payload.val().status | slice:0:20)+'..':(x.payload.val().status)}}</div>
               
               <!-- <div class="col col-xs-3"><i class="fa fa-edit" ></i></div> -->
-            <!-- </div> -->
+            </div>
           </div>
        </div>  
        </div>

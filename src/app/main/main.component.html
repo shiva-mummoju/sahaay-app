@@ -91,7 +91,7 @@
         <div class="card">
                 <i   class="fa fa-user fa-5x " ></i>
                 <div class="container">
-                    <h4><b>Add Proctor</b></h4> 
+                    <h4><b>Add Guest</b></h4> 
                 </div>
                 </div>
     </div>  
@@ -105,7 +105,7 @@
         </div>  
        
 
-        <div class="col col-lg-4 col-md-12 col-sm-12 col-xs-12  " *ngIf="auth.currentuserrank == 'admin'">
+        <div class="col col-lg-4 col-md-12 col-sm-12 col-xs-12  " (click)="clear()"    *ngIf="auth.currentuserrank == 'admin'">
                 <div class="card">
                         <i   class="fa fa-trash fa-5x " ></i>
                         <div class="container">

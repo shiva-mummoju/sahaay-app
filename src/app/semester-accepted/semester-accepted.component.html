@@ -34,7 +34,7 @@
       <!-- <div class="col col-xs-3">ACTION</div> -->
       </div>
       <div *ngFor="let x of  firebase.pendinglist | async">
-          <div *ngIf=" x.payload.val().status == 'accepted'" >  
+          <div *ngIf=" x.payload.val().status == 'accepted'" (click)="view(x.key)">  
             <div class="row  myrow ">  
             <div class="col col-xs-4">{{(x.payload.val().name.length>20)? (x.payload.val().name | slice:0:20)+'..':(x.payload.val().name) }}</div>
               <div class="col col-xs-4">{{ (x.payload.val().rollNumber.length>20)? (x.payload.val().rollNumber | slice:0:20)+'..':(x.payload.val().rollNumber) }}</div>

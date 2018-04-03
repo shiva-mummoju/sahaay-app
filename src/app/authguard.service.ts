@@ -37,7 +37,7 @@ export class AuthguardService implements CanActivate{
           return true;
         }
       }
-      if( x=='history' ||    x== 'guestlist' || x=="semesterrejected" || x == 'proctorlist' || x == 'adminreview' || x=='adminremark' || x == 'allaccepted' || x=='semesterall'){
+      if(x=='view' || x=='history' ||    x== 'guestlist' || x=="semesterrejected" || x == 'proctorlist' || x == 'adminreview' || x=='adminremark' || x == 'allaccepted' || x=='semesterall'){
         if(this.currentuserrank == 'admin'){
           return true;
         }

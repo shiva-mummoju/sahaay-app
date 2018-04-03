@@ -1,5 +1,5 @@
 <!-- <a routerLink="/main">Back</a><br><br> -->
-<app-header></app-header>
+<!-- <app-header></app-header>
 
 <p>Enter proctor name</p>
 <div class="form-group">
@@ -40,4 +40,60 @@
 
 </table>
 
+ -->
 
+
+ <app-header></app-header>
+
+<div class="container">
+<div class="myclass">
+<h2>Enter Proctor Details</h2>
+<div class="form-group">
+    <label >Proctor name: </label>
+  <input class="form-control"  type="text"  [(ngModel)]="proctorName" placeholder="enter the name: "  > 
+  
+  
+  </div>
+<div class="form-group">
+  <label >Proctor email: </label>
+<input class="form-control"  type="text"  [(ngModel)]="proctorInput" placeholder="enter the gmail id of the proctor to add "  > 
+
+
+</div>
+
+<div  class="form-group">
+    <button class="btn btn-primary form-control"  (click)='addnewproctor()' >Submit</button>
+</div>
+
+
+</div>
+
+
+
+<br>
+
+ 
+<h2>List of Admin</h2>
+
+
+
+<div class="data">
+    <div class="row head">
+    <div class="col col-xs-4">NAME</div>
+    <div class="col col-xs-4">GMAIL</div>
+    <div class="col col-xs-4">REMOVE</div>
+    </div>
+    <div *ngFor="let x of  firebase.proctorList | async">
+        <div  (click)="onDelete(x.key)">  
+          <div class="row  myrow "    >  
+          <div class="col col-xs-4">{{(x.payload.val().name.length>20)? (x.payload.val().name | slice:0:20)+'..':(x.payload.val().name) }}</div>
+            <div class="col col-xs-4">{{ (x.payload.val().email.email>20)? (x.payload.val().email | slice:0:20)+'..':(x.payload.val().email) }}</div>
+            <!-- <div class="col col-xs-4">{{ (x.payload.val().section.length>20)? (x.payload.val().section | slice:0:20)+'..':(x.payload.val().section)}}</div> -->
+            <div class="col col-xs-4"> <i class="fa fa-trash-o" ></i></div>
+            
+            <!-- <div class="col col-xs-3"><i class="fa fa-edit" ></i></div> -->
+          </div>
+        </div>
+     </div>
+
+</div>

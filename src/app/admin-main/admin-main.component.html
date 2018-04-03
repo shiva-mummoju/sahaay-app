@@ -1,6 +1,11 @@
 
-<a routerLink="/main">Back</a><br><br>
-<p>Enter admin name</p>
+<!-- <a routerLink="/main">Back</a><br><br> -->
+
+<app-header></app-header>
+
+<div class="container">
+<div class="myclass">
+<h2>Enter admin name</h2>
 <div class="form-group">
     <label >Admin name: </label>
   <input class="form-control"  type="text"  [(ngModel)]="adminName" placeholder="enter the name: "  > 
@@ -19,28 +24,34 @@
 </div>
 
 
-
+</div>
 
 
 
 <br>
 
-
-<p>List of Admin</p>
-
-
+ 
+<h2>List of Admin</h2>
 
 
-<table class="table table-sm table-hover">
-  <tr *ngFor="let x of  firebase.adminList | async">
-      <td>{{x.payload.val().name}}</td>
-      <td>
-        <a class="btn" (click)="onDelete(x.key)">
-          <i class="fa fa-trash-o" ></i>
-        </a>
-      </td>
-  </tr>
 
-</table>
+<div class="data">
+    <div class="row head">
+    <div class="col col-xs-4">NAME</div>
+    <div class="col col-xs-4">GMAIL</div>
+    <div class="col col-xs-4">REMOVE</div>
+    </div>
+    <div *ngFor="let x of  firebase.adminList | async">
+        <div  (click)="onDelete(x.key)">  
+          <div class="row  myrow "    >  
+          <div class="col col-xs-4">{{(x.payload.val().name.length>20)? (x.payload.val().name | slice:0:20)+'..':(x.payload.val().name) }}</div>
+            <div class="col col-xs-4">{{ (x.payload.val().email.email>20)? (x.payload.val().email | slice:0:20)+'..':(x.payload.val().email) }}</div>
+            <!-- <div class="col col-xs-4">{{ (x.payload.val().section.length>20)? (x.payload.val().section | slice:0:20)+'..':(x.payload.val().section)}}</div> -->
+            <div class="col col-xs-4"> <i class="fa fa-trash-o" ></i></div>
+            
+            <!-- <div class="col col-xs-3"><i class="fa fa-edit" ></i></div> -->
+          </div>
+        </div>
+     </div>
 
-
+</div>

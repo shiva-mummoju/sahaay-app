@@ -22,7 +22,7 @@ export class StudentEditComponent implements OnInit {
   onSubmit(applicationform: NgForm){
 
     if(this.auth.canstudentsubmitnow == 'no'){
-      this.toastr.error('You have already submitted one application','One user one submission this semester');
+      this.toastr.error('You have already submitted one application this semester','One user one submission');
       return;
     }
     if(confirm('Are you sure you want to submit? Once submitted, changes cant be made to the application!')){

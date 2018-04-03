@@ -79,10 +79,12 @@ const routes: Routes = [
 
  
 let config = new AuthServiceConfig([
-  {
+  { 
     id: GoogleLoginProvider.PROVIDER_ID,
-    // provider: new GoogleLoginProvider("274658131432-ggf56gf54ufb8o1i9bftutkocq87j04p.apps.googleusercontent.com")
-    provider: new GoogleLoginProvider("941498184130-ve6pghh0h9hu8l63m10pcoc457fh9a6d.apps.googleusercontent.com")
+    // for debugging in local host
+    provider: new GoogleLoginProvider("274658131432-ggf56gf54ufb8o1i9bftutkocq87j04p.apps.googleusercontent.com")
+    // for production
+    // provider: new GoogleLoginProvider("941498184130-ve6pghh0h9hu8l63m10pcoc457fh9a6d.apps.googleusercontent.com")
  
   },
   // {
