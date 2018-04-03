@@ -32,8 +32,11 @@ export class AdminProctorlistComponent implements OnInit {
 
 
   onDelete(key:string){
-    this.firebase.deleteproctor(key);
-    this.toastr.info("Removed from proctor list")
+    if(confirm("Are you sure you want to remove from proctor?")){
+      this.firebase.deleteproctor(key);
+      this.toastr.info("Removed from proctor list")
+    }
+    
   }
 
 }
