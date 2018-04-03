@@ -13,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ProctorMainComponent implements OnInit {
    
-  constructor(private toastr: ToastrService,private router: Router,private auth: AuthguardService,private firebase:FirebaseService) { }
+  constructor(private toastr: ToastrService,private router: Router,public auth: AuthguardService,public firebase:FirebaseService) { }
 
   ngOnInit() {
   }

@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AdminReviewComponent implements OnInit {
 
-  constructor(private firebase: FirebaseService, private auth: AuthguardService,private router: Router) { }
+  constructor(public firebase: FirebaseService, public auth: AuthguardService,private router: Router) { }
 
   ngOnInit() {
     this.firebase.getthisemesterpendingapplications();

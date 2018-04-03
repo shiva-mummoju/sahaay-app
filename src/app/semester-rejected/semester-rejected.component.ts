@@ -9,7 +9,7 @@ import { AuthguardService } from '../authguard.service';
 })
 export class SemesterRejectedComponent implements OnInit {
 
-  constructor(private firebase : FirebaseService, private auth: AuthguardService) { }
+  constructor(public firebase : FirebaseService, public auth: AuthguardService) { }
 
   ngOnInit() {
   }

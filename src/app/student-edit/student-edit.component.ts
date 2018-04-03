@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class StudentEditComponent implements OnInit {
 
-  constructor(private toastr : ToastrService,private firebase:FirebaseService,private auth: AuthguardService,private router: Router) { }
+  constructor(private toastr : ToastrService,public firebase:FirebaseService,private auth: AuthguardService,private router: Router) { }
 
   ngOnInit() {
     this.firebase.makesurestudentcansubmit();

@@ -34,6 +34,10 @@ import { AdminRemarkComponent } from './admin-remark/admin-remark.component';
 import { GuestlistComponent } from './guestlist/guestlist.component';
 import { LegacyViewComponent } from './legacy-view/legacy-view.component';
 import { AngularFireAuth } from 'angularfire2/auth';
+  
+import { SocialLoginModule, AuthServiceConfig } from "angular4-social-login";
+import { GoogleLoginProvider, FacebookLoginProvider } from "angular4-social-login";
+import { HeaderComponent } from './header/header.component';
 // import { AuthService } from 'angular2-google-login';
 
 var firebaseconfig = {
@@ -71,22 +75,25 @@ const routes: Routes = [
   {path: '**' , component: GoogleComponent }, 
 
 ];
-  
-import { SocialLoginModule, AuthServiceConfig } from "angular4-social-login";
-import { GoogleLoginProvider, FacebookLoginProvider } from "angular4-social-login";
-import { HeaderComponent } from './header/header.component';
+
 
  
 let config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider("274658131432-ggf56gf54ufb8o1i9bftutkocq87j04p.apps.googleusercontent.com")
+    // provider: new GoogleLoginProvider("274658131432-ggf56gf54ufb8o1i9bftutkocq87j04p.apps.googleusercontent.com")
+    provider: new GoogleLoginProvider("941498184130-ve6pghh0h9hu8l63m10pcoc457fh9a6d.apps.googleusercontent.com")
+ 
   },
   // {
     // id: FacebookLoginProvider.PROVIDER_ID,
     // provider: new FacebookLoginProvider("Facebook-App-Id")
   // }
 ]);
+
+export function provideConfig() {
+  return config;
+}
 
 
 @NgModule({
@@ -112,7 +119,8 @@ let config = new AuthServiceConfig([
     AdminReviewComponent,
     AdminRemarkComponent,
     GuestlistComponent,
-    HeaderComponent
+    HeaderComponent,
+    LegacyViewComponent
   ],
   imports: [
     BrowserModule,
@@ -123,10 +131,13 @@ let config = new AuthServiceConfig([
     ToastrModule.forRoot(),
     RouterModule.forRoot(routes),
     HttpModule,
-    SocialLoginModule.initialize(config),
+    SocialLoginModule,
     MatTableModule,
   ],
-  providers: [AuthguardService,FirebaseService,AngularFireAuth,],
+  providers: [AuthguardService,FirebaseService,AngularFireAuth,{
+    provide: AuthServiceConfig,
+      useFactory: provideConfig
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

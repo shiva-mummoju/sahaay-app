@@ -32,7 +32,7 @@ export class MainComponent implements OnInit {
   loadAPI:any;
   
   i:any;
-  constructor(private authService: AuthService,private http: Http,private firebase : FirebaseService, private toastr: ToastrService ,private auth: AuthguardService ,private router : Router) { }
+  constructor(public authService: AuthService,private http: Http,public firebase : FirebaseService, private toastr: ToastrService ,public auth: AuthguardService ,private router : Router) { }
 
   
 

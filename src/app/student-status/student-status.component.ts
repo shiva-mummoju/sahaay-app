@@ -10,7 +10,7 @@ import { FirebaseService } from '../firebase.service';
 })
 export class StudentStatusComponent implements OnInit {
 
-  constructor(private auth: AuthguardService,private firebase: FirebaseService) { }
+  constructor(public auth: AuthguardService,public firebase: FirebaseService) { }
 
   ngOnInit() {
 

@@ -15,7 +15,7 @@ export class AdminMainComponent implements OnInit {
   adminName: string = '';
   adminList : Proctor[] = [];
 
-  constructor(private firebase:FirebaseService, private auth: AuthguardService,private toastr: ToastrService) { }
+  constructor(public firebase:FirebaseService, public auth: AuthguardService,private toastr: ToastrService) { }
 
   ngOnInit() {
  

@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AdminRemarkComponent implements OnInit {
 
-  constructor(private firebase: FirebaseService,private toastr: ToastrService, private router: Router) { }
+  constructor(public firebase: FirebaseService,private toastr: ToastrService, private router: Router) { }
 
   ngOnInit() {
   }
