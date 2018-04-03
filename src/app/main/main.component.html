@@ -28,7 +28,7 @@
                     </div>
                     </div>
         </div>
-    <div class="col col-lg-4 col-md-12 col-sm-12 col-xs-12  " (click)="gotoplace('proctorreview')" *ngIf="auth.currentuserrank == 'proctor'">
+    <div class="col col-lg-4 col-md-12 col-sm-12 col-xs-12  " (click)="gotoplace('proctorreview')" *ngIf="auth.currentuserrank == 'proctor' || auth.currentuserrank == 'admin'">
             <div class="card">
                     <i   class="fa fa-spinner fa-5x " ></i>
                     <div class="container">
