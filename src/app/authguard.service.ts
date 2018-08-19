@@ -44,7 +44,7 @@ export class AuthguardService implements CanActivate{
       }
 
       if(x == 'edit' || x== 'view' || x == 'status'){
-        
+
         if(this.currentuserrank == 'student'){
           return true;
         }
@@ -75,20 +75,20 @@ export class AuthguardService implements CanActivate{
   this.currentuserid = decodestr;
  }
  gotogoogle(){
-  console.log('go to google called');
+  // console.log('go to google called');
   this.login = 0;
   this.currentemail = '';
   this.currentuserrank = 'student';
-  
+
 
   this.authService.signOut().then(()=>{
    this.login = 0;
    this.currentuserrank = 'student';
    this.toastr.info('You have been logged out!')
- console.log('logout called after then');
+//  console.log('logout called after then');
  this.router.navigate(['google']);
  });
-  
+
 }
 
 

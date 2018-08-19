@@ -1,124 +1,127 @@
 <app-header></app-header>
 <div class="container myclass">
-<form #application="ngForm"  (ngSubmit)="onSubmit(application)">
-  <div class="form-group">
-    <label > Name : </label>
-    <input type="text" name="name" class="form-control"  [(ngModel)]="firebase.selectedApplication.name" placeholder="name" >
-  </div>
-  <div class="form-group">
-      <label > Roll Number : </label>
-      <input type="text" name="rollNumber" class="form-control"  [(ngModel)]="firebase.selectedApplication.rollNumber" placeholder="roll number" >
+  <form #application="ngForm" (ngSubmit)="onSubmit(application)">
+    <div class="form-group">
+      <label> Name : </label>
+      <input type="text" name="name" class="form-control" [(ngModel)]="firebase.selectedApplication.name" placeholder="name">
     </div>
     <div class="form-group">
-        <label > class : </label>
-        <input type="text" name="class" class="form-control"  [(ngModel)]="firebase.selectedApplication.class" placeholder="class" >
-      </div>
-      <div class="form-group">
-          <label > section : </label>
-          <input type="text" name="section" class="form-control"  [(ngModel)]="firebase.selectedApplication.section" placeholder="section" >
-        </div>
-        <div class="form-group">
-            <label > Proctor : </label>
-            <!-- <input type="text" name="proctor" class="form-control"  [(ngModel)]="firebase.selectedApplication.proctor" placeholder="proctor" > -->
-          
-            <select  name="proctor" class="form-control" [(ngModel)]="firebase.selectedApplication.proctor" >
-            
-                <option *ngFor="let x of  firebase.proctorList | async" value="{{x.payload.val().email}}">{{x.payload.val().name}}</option>
-              
-            </select>
+      <label> Roll Number : </label>
+      <input type="text" name="rollNumber" class="form-control" [(ngModel)]="firebase.selectedApplication.rollNumber" placeholder="roll number">
+    </div>
+    <div class="form-group">
+      <label> class : </label>
+      <input type="text" name="class" class="form-control" [(ngModel)]="firebase.selectedApplication.class" placeholder="class">
+    </div>
+    <div class="form-group">
+      <label> section : </label>
+      <input type="text" name="section" class="form-control" [(ngModel)]="firebase.selectedApplication.section" placeholder="section">
+    </div>
+    <div class="form-group">
+      <label> Proctor : </label>
+      <!-- <input type="text" name="proctor" class="form-control"  [(ngModel)]="firebase.selectedApplication.proctor" placeholder="proctor" > -->
 
-          </div>        
-          <div class="form-group">
-              <label > Father Name : </label>
-              <input type="text" name="father" class="form-control"  [(ngModel)]="firebase.selectedApplication.father" placeholder="Father Name" >
-            </div>
-            <div class="form-group">
-                <label > Father Occupation : </label>
-                <input type="text" name="fatherOccupation" class="form-control"  [(ngModel)]="firebase.selectedApplication.fatherOccupation" placeholder="Father Occupation" >
-              </div>
-              <div class="form-group">
-                  <label > Family Annual Income : </label>
-                  <input type="text" name="familyAnnualIncome" class="form-control"  [(ngModel)]="firebase.selectedApplication.familyAnnualIncome" placeholder="Family Annual Income" >
-                </div>
-                <div class="form-group">
-                    <label >Are you receiving Fee Reimbursment? : </label>
-                    <input type="text" name="receiveFee" class="form-control"  [(ngModel)]="firebase.selectedApplication.recieveFeeReimburs" placeholder="Recieve Fee Reimbursment?" >
-                  </div>
-                  <div class="form-group">
-                      <label > Are you recieving any other scholarships? : </label>
-                      <input type="text" name="scholarship" class="form-control"  [(ngModel)]="firebase.selectedApplication.scholarship" placeholder="scholarships" >
-                    </div>
-                    <div class="form-group">
-                        <label > If yes, name of the scholarship : </label>
-                        <input type="text" name="scholarshipname" class="form-control"  [(ngModel)]="firebase.selectedApplication.scholarshipname" placeholder="name" >
-                      </div>
-                      <div class="form-group">
-                          <label > Attendance Percentage : </label>
-                          <input type="text" name="attendance" class="form-control"  [(ngModel)]="firebase.selectedApplication.attendance" placeholder="name" >
-                        </div>
-                        <div class="form-group">
-                            <label > Aggregate Marks Percentage : </label>
-                            <input type="text" name="aggregate"  class="form-control"  [(ngModel)]="firebase.selectedApplication.aggregate" placeholder="Aggregate marks percentage" >
-                          </div>
-                          <div class="form-group">
-                              <label > Number of backlogs : </label>
-                              <input type="text" name="backlogs" class="form-control"  [(ngModel)]="firebase.selectedApplication.backlogs" placeholder="Number of backlogs" >
-                            </div>
-                            <div class="form-group">
-                                <label > Eamcet Rank : </label>
-                                <input type="text" name="eamcetrank" class="form-control"  [(ngModel)]="firebase.selectedApplication.eamcetrank" placeholder="Eamcet rank" >
-                              </div>
-                              <div class="form-group">
-                                  <label > Intermediate/Diploma Rank : </label>
-                                  <input type="text" name="interrank" class="form-control"  [(ngModel)]="firebase.selectedApplication.interrank" placeholder="Intermediate/ Diploma rank" >
-                                </div>
-                                <div class="form-group">
-                                    <label > 10th Percentage: </label>
-                                    <input type="text" name="tenth"  class="form-control"  [(ngModel)]="firebase.selectedApplication.tenth" placeholder="10th Percentage" >
-                                  </div>
-                                  <div class="form-group">
-                                      <label > Why do you think that you are the deserving candidate for Sahaay Fund? : </label>
-                                      <label >1: </label>
-                                  
-                                      <input type="text" name="deserving1" class="form-control"  [(ngModel)]="firebase.selectedApplication.deserving1" placeholder="" >
-                                      <label >2: </label>
-                                  
-                                      <input type="text" name="deserving2"  class="form-control"  [(ngModel)]="firebase.selectedApplication.deserving2" placeholder="" >
-                                      <label >3: </label>
-                                  
-                                      <input type="text" name="deserving3"  class="form-control"  [(ngModel)]="firebase.selectedApplication.deserving3" placeholder="" >
-                                    
-                                    </div>
-                                    <div class="form-group">
-                                        <label > What are your future plans? : </label>
-                                        <label >1: </label>
-                                    
-                                        <input type="text" name="utlize1" class="form-control"  [(ngModel)]="firebase.selectedApplication.utilize1" placeholder="" >
-                                        <label >2: </label>
-                                    
-                                        <input type="text" name="utilize2" class="form-control"  [(ngModel)]="firebase.selectedApplication.utilize2" placeholder="" >
-                                        
-                                      </div>
-                                    <div class="form-group">
-                                        <label > What are your future plans? : </label>
-                                        <label >1: </label>
-                                    
-                                        <input type="text" name="future1"  class="form-control"  [(ngModel)]="firebase.selectedApplication.future1" placeholder="" >
-                                        <label >2: </label>
-                                    
-                                        <input type="text" name="future2" class="form-control"  [(ngModel)]="firebase.selectedApplication.future2" placeholder="" >
-                                        
-                                      </div>
-                                      <div class="form-group">
-                                          <label > In which Semester did you receive Sahaay fund? : </label>
-                                          <input type="text"name="semester" class="form-control"  [(ngModel)]="firebase.selectedApplication.semester" placeholder="Semester" >
-                                        </div>
-                                        <div class="form-group">
-                                            <button class="btn btn-primary" type="submit" [disabled]="!application.valid">
-                                              <i class="fa fa-floppy-o"></i>
-                                               Submit</button>
-                                            
-                                          </div>
+      <select name="proctor" class="form-control" [(ngModel)]="firebase.selectedApplication.proctor">
 
-</form>
+        <option *ngFor="let x of  firebase.proctorList | async" value="{{x.payload.val().email}}">{{x.payload.val().name}}</option>
+
+      </select>
+
+    </div>
+    <div class="form-group">
+      <label> Father Name : </label>
+      <input type="text" name="father" class="form-control" [(ngModel)]="firebase.selectedApplication.father" placeholder="Father Name">
+    </div>
+    <div class="form-group">
+      <label> Father Occupation : </label>
+      <input type="text" name="fatherOccupation" class="form-control" [(ngModel)]="firebase.selectedApplication.fatherOccupation"
+        placeholder="Father Occupation">
+    </div>
+    <div class="form-group">
+      <label> Family Annual Income : </label>
+      <input type="text" name="familyAnnualIncome" class="form-control" [(ngModel)]="firebase.selectedApplication.familyAnnualIncome"
+        placeholder="Family Annual Income">
+    </div>
+    <div class="form-group">
+      <label>Are you receiving Fee Reimbursment? : </label>
+      <input type="text" name="receiveFee" class="form-control" [(ngModel)]="firebase.selectedApplication.recieveFeeReimburs" placeholder="Recieve Fee Reimbursment?">
+    </div>
+    <div class="form-group">
+      <label> Are you recieving any other scholarships? : </label>
+      <input type="text" name="scholarship" class="form-control" [(ngModel)]="firebase.selectedApplication.scholarship" placeholder="scholarships">
+    </div>
+    <div class="form-group">
+      <label> If yes, name of the scholarship : </label>
+      <input type="text" name="scholarshipname" class="form-control" [(ngModel)]="firebase.selectedApplication.scholarshipname"
+        placeholder="name">
+    </div>
+    <div class="form-group">
+      <label> Attendance Percentage : </label>
+      <input type="text" name="attendance" class="form-control" [(ngModel)]="firebase.selectedApplication.attendance" placeholder="name">
+    </div>
+    <div class="form-group">
+      <label> Aggregate Marks Percentage : </label>
+      <input type="text" name="aggregate" class="form-control" [(ngModel)]="firebase.selectedApplication.aggregate" placeholder="Aggregate marks percentage">
+    </div>
+    <div class="form-group">
+      <label> Number of backlogs : </label>
+      <input type="text" name="backlogs" class="form-control" [(ngModel)]="firebase.selectedApplication.backlogs" placeholder="Number of backlogs">
+    </div>
+    <div class="form-group">
+      <label> Eamcet Rank : </label>
+      <input type="text" name="eamcetrank" class="form-control" [(ngModel)]="firebase.selectedApplication.eamcetrank" placeholder="Eamcet rank">
+    </div>
+    <div class="form-group">
+      <label> Intermediate/Diploma Rank : </label>
+      <input type="text" name="interrank" class="form-control" [(ngModel)]="firebase.selectedApplication.interrank" placeholder="Intermediate/ Diploma rank">
+    </div>
+    <div class="form-group">
+      <label> 10th Percentage: </label>
+      <input type="text" name="tenth" class="form-control" [(ngModel)]="firebase.selectedApplication.tenth" placeholder="10th Percentage">
+    </div>
+    <div class="form-group">
+      <label> Why do you think that you are the deserving candidate for Sahaay Fund? : </label> <br/>
+      <label>1: </label>
+
+      <input type="text" name="deserving1" class="form-control" [(ngModel)]="firebase.selectedApplication.deserving1" placeholder="">
+      <label>2: </label>
+
+      <input type="text" name="deserving2" class="form-control" [(ngModel)]="firebase.selectedApplication.deserving2" placeholder="">
+      <label>3: </label>
+
+      <input type="text" name="deserving3" class="form-control" [(ngModel)]="firebase.selectedApplication.deserving3" placeholder="">
+
+    </div>
+    <div class="form-group">
+      <label> How are you going to utilize the funds?: </label><br/>
+      <label>1: </label>
+
+      <input type="text" name="utlize1" class="form-control" [(ngModel)]="firebase.selectedApplication.utilize1" placeholder="">
+      <label>2: </label>
+
+      <input type="text" name="utilize2" class="form-control" [(ngModel)]="firebase.selectedApplication.utilize2" placeholder="">
+
+    </div>
+    <div class="form-group">
+      <label> What are your future plans? : </label><br/>
+      <label>1: </label>
+
+      <input type="text" name="future1" class="form-control" [(ngModel)]="firebase.selectedApplication.future1" placeholder="">
+      <label>2: </label>
+
+      <input type="text" name="future2" class="form-control" [(ngModel)]="firebase.selectedApplication.future2" placeholder="">
+
+    </div>
+    <div class="form-group">
+      <label> In which Semester did you receive Sahaay fund? : </label>
+      <input type="text" name="semester" class="form-control" [(ngModel)]="firebase.selectedApplication.semester" placeholder="Semester">
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit" [disabled]="!application.valid">
+        <i class="fa fa-floppy-o"></i>
+        Submit</button>
+
+    </div>
+
+  </form>
 </div>

@@ -24,14 +24,14 @@ myadmins : AngularFireList<any>;
 statusofcurrentapplication:string = 'Not Submitted';
 
   constructor( private toastr:ToastrService,  private router: Router,private http: Http,private firebase: AngularFireDatabase , private auth: AuthguardService) { }
-  
+
 
 
   getproctorlist(){
     this.proctorList = this.firebase.list('users/proctors').snapshotChanges();
 
   }
-  
+
 
 
   insertProctor(n,em){
@@ -40,7 +40,7 @@ statusofcurrentapplication:string = 'Not Submitted';
       email: em
     });
 
-    
+
   }
 
   deleteproctor(key:string){
@@ -66,7 +66,7 @@ statusofcurrentapplication:string = 'Not Submitted';
 
   getadminlist(){
    this.adminList = this.firebase.list('users/admins').snapshotChanges();
-   
+
   }
 
   insertadmin(n,em){
@@ -78,7 +78,7 @@ statusofcurrentapplication:string = 'Not Submitted';
 
   deleteadmin(x){
     this.firebase.list('users/admins').remove(x);
-    
+
   }
 
 
@@ -107,7 +107,7 @@ statusofcurrentapplication:string = 'Not Submitted';
 
   insertStudentApplication(){
     this.firebase.list('legacy/' + this.auth.currentuserid).update('/',{
-      
+
       uid:this.auth.currentuserid,
       name:this.selectedApplication.name,
       email:this.auth.currentemail,
@@ -143,7 +143,7 @@ statusofcurrentapplication:string = 'Not Submitted';
 
 
     this.firebase.list('applications/' + this.auth.currentuserid).update('/',{
-      
+
       uid:this.auth.currentuserid,
       name:this.selectedApplication.name,
       email:this.auth.currentemail,
@@ -192,7 +192,7 @@ statusofcurrentapplication:string = 'Not Submitted';
   }
 
 
-  
+
 
   getthisemesterpendingapplications(){
     this.pendinglist = this.firebase.list('applications').snapshotChanges();
@@ -325,12 +325,12 @@ statusofcurrentapplication:string = 'Not Submitted';
 
   deleteallapplicationsthissemester(){
     if(this.auth.currentuserrank == 'admin'){
-      console.log('deleting');
+      // console.log('deleting');
     this.firebase.list('applications').remove().then(()=>{
       this.toastr.success('Can start taking fresh applications','Cleared all applications')
     });
   }
-    
+
   }
 
 

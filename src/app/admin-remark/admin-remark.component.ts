@@ -15,7 +15,7 @@ export class AdminRemarkComponent implements OnInit {
   ngOnInit() {
   }
   acceptapplication(){
-    console.log(this.firebase.selectedApplication);
+    // console.log(this.firebase.selectedApplication);
     this.toastr.success("Accepted Application",'Success');
     this.firebase.selectedApplication.status = 'accepted';
     this.firebase.update('Your application has been accepted by HOD','accepted');
@@ -29,7 +29,7 @@ export class AdminRemarkComponent implements OnInit {
   this.firebase.selectedApplication.status = 'rejected'
   this.firebase.update('Your application has been rejected by HOD','rejected');;
   this.router.navigate(['adminreview']);
-}    
+}
   }
 
 

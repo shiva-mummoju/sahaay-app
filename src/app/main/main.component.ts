@@ -30,30 +30,30 @@ import { SocialUser } from "angular4-social-login";
 })
 export class MainComponent implements OnInit {
   loadAPI:any;
-  
+
   i:any;
   constructor(public authService: AuthService,private http: Http,public firebase : FirebaseService, private toastr: ToastrService ,public auth: AuthguardService ,private router : Router) { }
 
-  
+
 
   ngOnInit() {
     if(this.auth.currentuserrank == 'student'){
       this.firebase.loadthisapplicationintoselected('applications',   this.auth.currentuserid,'skip');
     }
-   
+
 
     this.loadAPI = new Promise((resolve) => {
       this.loadScript();
       resolve(true);
   });
-    
-    
-    
+
+
+
   }
 
-  
 
-  public loadScript() {        
+
+  public loadScript() {
     var isFound = false;
     var scripts = document.getElementsByTagName("script")
     for (var i = 0; i < scripts.length; ++i) {
@@ -77,7 +77,7 @@ export class MainComponent implements OnInit {
     }
 }
 
- 
+
 
   gotoplace(x:string){
     if(this.auth.icango(x)){
@@ -86,31 +86,31 @@ export class MainComponent implements OnInit {
 
   }
 
-  
-  
 
- 
+
+
+
 
  getdata(){
-  console.log(this.auth.currentuserrank);
+  // console.log(this.auth.currentuserrank);
  }
 
 
 
- 
+
   signOut(): void {
-    
-    console.log('sign out called');
+
+    // console.log('sign out called');
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
-      console.log('User signed out.');
-    }); 
+      // console.log('User signed out.');
+    });
 
-    
 
-   
-    
-    
+
+
+
+
     // this.router.navigate(['google']);
   }
 

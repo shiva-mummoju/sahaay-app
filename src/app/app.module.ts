@@ -34,10 +34,11 @@ import { AdminRemarkComponent } from './admin-remark/admin-remark.component';
 import { GuestlistComponent } from './guestlist/guestlist.component';
 import { LegacyViewComponent } from './legacy-view/legacy-view.component';
 import { AngularFireAuth } from 'angularfire2/auth';
-  
+
 import { SocialLoginModule, AuthServiceConfig } from "angular4-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider } from "angular4-social-login";
 import { HeaderComponent } from './header/header.component';
+// import { NewcomComponent } from './newcom/newcom.component';
 // import { AuthService } from 'angular2-google-login';
 
 var firebaseconfig = {
@@ -72,20 +73,20 @@ const routes: Routes = [
   { path:'main', canActivate:[AuthguardService] , component: MainComponent },
   { path:'view', canActivate:[AuthguardService] , component: ApplicationViewComponent },
   {path: 'guestlist' , canActivate: [AuthguardService] , component: GuestlistComponent  },
-  {path: '**' , component: GoogleComponent }, 
+  {path: '**' , component: GoogleComponent },
 
 ];
 
 
- 
+
 let config = new AuthServiceConfig([
-  { 
+  {
     id: GoogleLoginProvider.PROVIDER_ID,
     // for debugging in local host
-    // provider: new GoogleLoginProvider("274658131432-ggf56gf54ufb8o1i9bftutkocq87j04p.apps.googleusercontent.com")
+    provider: new GoogleLoginProvider("274658131432-ggf56gf54ufb8o1i9bftutkocq87j04p.apps.googleusercontent.com")
     // for production
-    provider: new GoogleLoginProvider("941498184130-ve6pghh0h9hu8l63m10pcoc457fh9a6d.apps.googleusercontent.com")
- 
+    // provider: new GoogleLoginProvider("941498184130-ve6pghh0h9hu8l63m10pcoc457fh9a6d.apps.googleusercontent.com")
+
   },
   // {
     // id: FacebookLoginProvider.PROVIDER_ID,
@@ -122,7 +123,8 @@ export function provideConfig() {
     AdminRemarkComponent,
     GuestlistComponent,
     HeaderComponent,
-    LegacyViewComponent
+    LegacyViewComponent,
+    // NewcomComponent
   ],
   imports: [
     BrowserModule,

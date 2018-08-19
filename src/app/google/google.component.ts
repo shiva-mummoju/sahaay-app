@@ -14,7 +14,7 @@ import { FacebookLoginProvider, GoogleLoginProvider } from "angular4-social-logi
 
 import { SocialUser } from "angular4-social-login";
 
- 
+
 @Component({
   selector: 'app-google',
   templateUrl: './google.component.html',
@@ -28,7 +28,7 @@ export class GoogleComponent implements OnInit  {
   adminInput: string = '';
   adminList : Proctor[] = [];
 
-  
+
   private user: SocialUser;
   private loggedIn: boolean;
 
@@ -40,15 +40,15 @@ export class GoogleComponent implements OnInit  {
         // console.log('going to the proctor main page');
         this.router.navigate(['main']);
       // }
-    }  
+    }
   }
-  
+
   ngOnInit(){
     // this.auth.login = 1;
     // this.auth.currentuserrank = 'admin';
     // this.auth.currentemail = 'shiva.sairam97@gmail.com';
     // this.router.navigate(['main']);
-    
+
 
     this.authService.authState.subscribe((user) => {
       console.log('state changed')
@@ -57,28 +57,28 @@ export class GoogleComponent implements OnInit  {
       if(user!=null){
         console.log(user);
         this.auth.currentemail  = user.email;
-        this.auth.currentuserid = user.id; 
+        this.auth.currentuserid = user.id;
         console.log('Currentuser id is ' + this.auth.currentuserid )
       }else{
         this.auth.currentemail = '';
         this.auth.currentuserid = '';
       }
       // console.log(this.user);
-      
+
     });
     if(this.auth.login == 1){
       // if(this.auth.currentemail == 'shiva.sairam97@gmail.com'){
         // console.log('check presence called');
         // console.log('going to the proctor main page');
         this.router.navigate(['main']);
-      
-        
+
+
     }
-   
- 
 
 
-   
+
+
+
   }
 
 
@@ -87,7 +87,7 @@ export class GoogleComponent implements OnInit  {
      console.log('login with user');
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then(() => {
       this.auth.login = 1;
-      
+
       console.log('called from the min');
     // this.auth.currentuserrank = 'admin';
 
@@ -99,21 +99,21 @@ export class GoogleComponent implements OnInit  {
         if(this.auth.currentemail == data['guests'][i]['email']){
           this.auth.currentuserrank = 'guest';
         }
-      } 
+      }
 
 
       for(var i in data['proctors']){
-        console.log(data['proctors'][i]['email']);
+        // console.log(data['proctors'][i]['email']);
         if(this.auth.currentemail == data['proctors'][i]['email']){
           this.auth.currentuserrank = 'proctor';
-          
+
         }
-      } 
-      console.log('going to amdin')
+      }
+      // console.log('going to amdin')
         for(var i in data['admins']){
           if(this.auth.currentemail == data['admins'][i]['email'] ){
             this.auth.currentuserrank = 'admin';
-          
+
           }
         }
       }
@@ -124,13 +124,13 @@ this.toastr.success('You have been logged in');
 
 
 
-   
+
     });
-    
-  
+
+
   }
 
- 
+
 
 dosomething(googleUser){
   console.log('cookie');
@@ -179,8 +179,8 @@ dosomething(googleUser){
     // console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
     // console.log('Name: ' + profile.getName());
     // console.log('Image URL: ' + profile.getImageUrl());
-    // console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present. 
-    
+    // console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+
     this.auth.login = 1;
     this.auth.currentemail = profile.getEmail();
     this.auth.calcuateuserid();
@@ -195,20 +195,20 @@ dosomething(googleUser){
         if(this.auth.currentemail == data['guests'][i]['email']){
           this.auth.currentuserrank = 'guest';
         }
-      } 
+      }
 
 
       for(var i in data['proctors']){
         if(this.auth.currentemail == data['proctors'][i]['email']){
           this.auth.currentuserrank = 'proctor';
-          
+
         }
-      } 
+      }
       console.log('going to amdin')
         for(var i in data['admins']){
           if(this.auth.currentemail == data['admins'][i]['email'] ){
             this.auth.currentuserrank = 'admin';
-          
+
           }
         }
       }
@@ -220,7 +220,7 @@ dosomething(googleUser){
 
 
 
-    
+
 }
 
 }

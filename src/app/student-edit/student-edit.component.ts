@@ -5,6 +5,10 @@ import { ToastrService } from 'ngx-toastr';
 import { AuthguardService } from '../authguard.service';
 import { Router } from '@angular/router';
 
+
+
+
+
 @Component({
   selector: 'app-student-edit',
   templateUrl: './student-edit.component.html',
@@ -12,19 +16,25 @@ import { Router } from '@angular/router';
 })
 export class StudentEditComponent implements OnInit {
 
+
+
+
   constructor(private toastr : ToastrService,public firebase:FirebaseService,private auth: AuthguardService,private router: Router) { }
 
   ngOnInit() {
     this.firebase.makesurestudentcansubmit();
-    
   }
 
   onSubmit(applicationform: NgForm){
+
+
+
 
     if(this.auth.canstudentsubmitnow == 'no'){
       this.toastr.error('You have already submitted one application this semester','One user one submission');
       return;
     }
+    // check for form validations;
     if(confirm('Are you sure you want to submit? Once submitted, changes cant be made to the application!')){
     this.firebase.insertStudentApplication();
     this.toastr.success("Your application will be reviewed by your proctor!",'Submitted Successfully')
@@ -33,3 +43,5 @@ export class StudentEditComponent implements OnInit {
   }
 
 }
+
+

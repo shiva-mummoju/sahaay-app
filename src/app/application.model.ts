@@ -9,7 +9,7 @@ export class Application{
     father: string = '' ;
     fatherOccupation:string = '' ;
     familyAnnualIncome:string = '' ;
-    recieveFeeReimburs: string;
+    recieveFeeReimburs: string = "";
     scholarship:string = '' ;
     scholarshipname:string = '' ;
     attendance:string = '' ;
@@ -30,7 +30,7 @@ export class Application{
    mainremark:string = '' ;
    status:string ='not submitted' ;
    viewstatus: string = 'Not Available';
-   
+
 }
 
 export class Proctor{

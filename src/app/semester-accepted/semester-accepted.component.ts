@@ -16,7 +16,7 @@ export class SemesterAcceptedComponent implements OnInit {
   }
 
   rejectthisapplication(key){
-    console.log('code for rejecting this application');
+    // console.log('code for rejecting this application');
   }
 
   view(key){

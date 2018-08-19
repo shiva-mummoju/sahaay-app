@@ -2,13 +2,12 @@
 
 
 
-<!-- 
+<!--
 <p>Current email: </p>
 <p>{{auth.currentemail}}</p>
 <p>Status of application: </p>
-
 <div *ngFor="let x of firebase.pendinglist | async"  >
-<div  *ngIf = "auth.currentuserid == x.payload.val().uid"> 
+<div  *ngIf = "auth.currentuserid == x.payload.val().uid">
         {{ x.payload.val().viewstatus  }}
 </div>
 </div> -->
@@ -19,25 +18,25 @@
                 <div class="col col-xs-6">NAME</div>
                 <div class="col col-xs-6">VALUE</div>
                 </div>
-                <div class="row  myrow ">  
+                <div class="row  myrow ">
                                 <div class="col col-xs-6">Email</div>
                                 <div class="col col-xs-6">{{auth.currentemail}}</div>
                           </div>
-                          
-                          
+
+
                           <div *ngFor="let x of  firebase.pendinglist | async">
-                                        
-                                        <div  *ngIf = "auth.currentuserid == x.payload.val().uid">  
+
+                                        <div  *ngIf = "auth.currentuserid == x.payload.val().uid">
                                                         <div class="row  myrow ">
-                                                        <div class="col col-xs-6">STATUS</div>  
+                                                        <div class="col col-xs-6">STATUS</div>
                                             <div class="col col-xs-6">{{ (x.payload.val().status.length>20)? (x.payload.val().status | slice:0:20)+'..':(x.payload.val().status)}}</div>
-                                          
+
                                           </div>
                                         </div>
                                      </div>
                                      </div>
 
-                          
+
 
 
 </div>
