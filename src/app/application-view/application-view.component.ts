@@ -17,5 +17,10 @@ export class ApplicationViewComponent implements OnInit {
   }
 
 
+  printThisApplication(num){
+    console.log("print this application has been called");
+    this.firebase.printThisApplication(num);
+  }
+
 
 }
