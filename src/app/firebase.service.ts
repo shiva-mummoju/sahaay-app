@@ -180,6 +180,12 @@ export class FirebaseService {
       status: 'under proctor review',
       viewstatus: 'Your application will be reviewed by your proctor',
     })
+    console.log("about to call the proctor function" + this.selectedApplication.proctor);
+    this.http.get("https://us-central1-sahay-vasavi.cloudfunctions.net/sendMailToProctor?email=" + this.selectedApplication.proctor)
+    .subscribe((response) => {
+      console.log(response);
+    });
+    // write code to send mail to the proctor.
   }
 
   makesurestudentcansubmit() {
@@ -321,6 +327,13 @@ export class FirebaseService {
       status: codestatus,
       viewstatus: viewstatus,
     })
+
+    if(codestatus == "under hod review"){
+      this.http.get("https://us-central1-sahay-vasavi.cloudfunctions.net/sendMailToAllAdmin")
+      .subscribe((res) => {
+        console.log(res);
+      });
+    }
 
 
 
