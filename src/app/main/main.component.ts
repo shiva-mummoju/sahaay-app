@@ -11,7 +11,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 // import "https://apis.google.com/js/platform.js";
 
 
-import * as firebase from 'firebase/app';
+// import * as firebase from 'firebase/app';
 // import { Http } from '@angular/http';
 // var auth2:any;
 var gapi;

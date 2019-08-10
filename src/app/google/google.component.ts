@@ -6,9 +6,9 @@ import { FirebaseService } from '../firebase.service';
 import { Proctor } from '../application.model';
 import { Http } from '@angular/http';
 import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase/app';
-import { Observable } from 'rxjs/Observable';
-// import { AuthService, AppGlobals } from 'angular2-google-login';
+// import * as firebase from 'firebase/app';
+// import { Observable } from 'rxjs/Observable';
+// import { AuthService, AppGlobals } from 'angular2-google-login'; 
 import { AuthService } from "angular4-social-login";
 import { FacebookLoginProvider, GoogleLoginProvider } from "angular4-social-login";
 
