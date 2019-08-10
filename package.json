@@ -2,20 +2,28 @@
   "name": "sahay",
   "version": "0.0.0",
   "license": "MIT",
+  "engines": {
+    "node": "12.7.0",
+    "npm": "6.10.2"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot -prod",
+    "start": "node server.js"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^5.2.0",
     "@angular/cdk": "^5.2.4",
+    "@angular/cli": "1.6.5",
     "@angular/common": "^5.2.0",
     "@angular/compiler": "^5.2.0",
+    "@angular/compiler-cli": "^5.2.0",
     "@angular/core": "^5.2.0",
     "@angular/forms": "^5.2.0",
     "@angular/http": "^5.2.0",
@@ -26,10 +34,13 @@
     "angular4-social-login": "^1.1.1",
     "angularfire2": "5.0.0-rc.4",
     "core-js": "^2.4.1",
+    "express": "^4.17.1",
     "firebase": "4.8.0",
     "ngx-toastr": "^8.3.0",
+    "path": "^0.12.7",
     "pdfmake": "^0.1.37",
     "rxjs": "^5.5.6",
+    "typescript": "~2.5.3",
     "validate.js": "^0.12.0",
     "zone.js": "^0.8.19"
   },
@@ -41,6 +52,7 @@
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
     "codelyzer": "^4.0.1",
+    "enhanced-resolve": "^3.3.0",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~2.0.0",
